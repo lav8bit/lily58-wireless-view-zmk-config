@@ -20,6 +20,20 @@
             bindings = <&kp END &kt LG(BACKSPACE)>;
             label = "REMOVE_LINE";
         };
+
+        WIN: WIN {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0 &to 5>;
+            label = "WIN";
+        };
+
+        MACBOOK: MACBOOK {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &to 0>;
+            label = "MACBOOK";
+        };
     };
 
     keymap {
@@ -53,11 +67,11 @@
 
             display-name = "L1";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0       &bt BT_SEL 1       &bt BT_SEL 2           &bt BT_SEL 3       &bt BT_SEL 4                              &kp C_RW           &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp K_MUTE       &kp C_VOL_DN    &kp C_VOLUME_UP
-&kp F1      &kp LG(LS(SPACE))  &kt LA(LC(LG(E)))  &kt LA(LC(LG(R)))      &kt LA(LG(LC(T)))  &kp F6                                    &kt LA(BACKSPACE)  &kp LA(LEFT)      &kp UP_ARROW        &kp LA(RIGHT)    &kp LA(DELETE)  &kp F12
-&kp GRAVE   &kt LA(LC(SPACE))  &kt LC(LG(LA(S)))  &kt LA(LC(LG(SPACE)))  &kt LA(LC(LG(F)))  &kp PRCNT                                 &kp HOME           &kp LEFT          &kp DOWN            &kp RIGHT_ARROW  &kp END         &kp TILDE
-&trans      &kt LA(LG(LC(Z)))  &kt LA(LC(LG(X)))  &kt LA(LC(LG(EQUAL)))  &kt LA(LC(LG(V)))  &trans        &tog 0       &trans         &kp PG_UP          &kp PAGE_DOWN     &kp KP_PLUS         &kp LBRC         &msc SCRL_UP    &kp PIPE
-                                                  &kp LEFT_ALT           &kp LCMD           &none         &kt ENTER    &kp BACKSPACE  &mo 4              &kp PAGE_DOWN     &remove_line
+&bt BT_CLR   &WIN               &MACBOOK           &bt BT_SEL 2           &bt BT_SEL 3       &bt BT_SEL 4                              &kp C_RW           &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp K_MUTE       &kp C_VOL_DN    &kp C_VOLUME_UP
+&kp F1       &kp LG(LS(SPACE))  &kt LA(LC(LG(E)))  &kt LA(LC(LG(R)))      &kt LA(LG(LC(T)))  &kp F6                                    &kt LA(BACKSPACE)  &kp LA(LEFT)      &kp UP_ARROW        &kp LA(RIGHT)    &kp LA(DELETE)  &kp F12
+&kp GRAVE    &kt LA(LC(SPACE))  &kt LC(LG(LA(S)))  &kt LA(LC(LG(SPACE)))  &kt LA(LC(LG(F)))  &kp PRCNT                                 &kp HOME           &kp LEFT          &kp DOWN            &kp RIGHT_ARROW  &kp END         &kp TILDE
+&kp LG(TAB)  &kt LA(LG(LC(Z)))  &kt LA(LC(LG(X)))  &kt LA(LC(LG(EQUAL)))  &kt LA(LC(LG(V)))  &trans        &tog 0       &trans         &kp PG_UP          &kp PAGE_DOWN     &kp KP_PLUS         &kp LBRC         &msc SCRL_UP    &kp PIPE
+                                                   &kp LEFT_ALT           &kp LCMD           &none         &kt ENTER    &kp BACKSPACE  &mo 4              &kp PAGE_DOWN     &remove_line
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -86,11 +100,11 @@
         L3 {
             display-name = "L3";
             bindings = <
-&trans     &trans  &trans           &trans                         &trans                 &trans                     &trans            &trans        &trans        &trans        &trans             &trans
-&kp GRAVE  &kp N1  &kp AMPERSAND    &mt LEFT_PARENTHESIS ASTERISK  &kp RIGHT_PARENTHESIS  &kp N5                     &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp RIGHT_BRACKET  &kp BACKSLASH
-&kp F1     &kp F2  &kp DOLLAR       &kp PERCENT                    &kp CARET              &kp F6                     &trans            &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp RIGHT          &trans
-&kp F7     &kp F8  &kp EXCLAMATION  &kp AT_SIGN                    &kp HASH               &kp F12  &trans    &trans  &kp KP_PLUS       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RBKT           &kp BSLH
-                                    &trans                         &trans                 &trans   &trans    &trans  &trans            &trans        &trans
+&trans     &trans  &trans           &trans                         &trans                 &trans                        &trans            &kp CARET     &kp SLASH     &kp ASTERISK  &kp MINUS  &trans
+&kp GRAVE  &kp N1  &kp AMPERSAND    &mt LEFT_PARENTHESIS ASTERISK  &kp RIGHT_PARENTHESIS  &kp N5                        &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp PLUS   &kp BACKSLASH
+&kp F1     &kp F2  &kp DOLLAR       &kp PERCENT                    &kp CARET              &kp F6                        &trans            &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL  &trans
+&kp F7     &kp F8  &kp EXCLAMATION  &kp AT_SIGN                    &kp HASH               &kp F12  &trans    &trans     &kp LEFT_BRACKET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RBKT   &kp BSLH
+                                    &trans                         &trans                 &trans   &trans    &kp ENTER  &trans            &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -107,6 +121,17 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        WINDOWS {
+            display-name = "Base";
+            bindings = <
+&kp ESC       &mt TILDE NUMBER_1  &kp N2  &kp N3    &kp N4     &kp N5                             &kp N6  &kp N7    &kp N8              &kp N9   &kp N0    &kp MINUS
+&kp TAB       &kp Q               &kp W   &kp E     &kp R      &kp T                              &kp Y   &kp U     &kp I               &kp O    &kp P     &kp EQUAL
+&kp LSHIFT    &kp A               &kp S   &kp D     &kp F      &kp G                              &kp H   &kp J     &kp K               &kp L    &kp SEMI  &kp SQT
+&kp LEFT_ALT  &kp Z               &kp X   &kp C     &kp V      &kp B   &kp K_COPY    &kp K_PASTE  &kp N   &kp M     &kp COMMA           &kp DOT  &kp FSLH  &kp RSHFT
+                                          &kp RGUI  &kp LCTRL  &mo 1   &kp SPACE     &kp RET      &mo 2   &kp BSPC  &kt LC(LEFT_SHIFT)
+            >;
         };
     };
 };
