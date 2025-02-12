@@ -35,11 +35,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                         &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp GRAVE
-&kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                          &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LALT  &kp LGUI  &mo 2   &kp SPACE    &kp RET   &mo 1   &kp BSPC  &kp RGUI
+&kp ESC     &mt TILDE NUMBER_1  &kp N2  &kp N3    &kp N4    &kp N5                             &kp N6  &kp N7    &kp N8             &kp N9   &kp N0    &kp MINUS
+&kp TAB     &kp Q               &kp W   &kp E     &kp R     &kp T                              &kp Y   &kp U     &kp I              &kp O    &kp P     &kp EQUAL
+&kp LSHIFT  &kp A               &kp S   &kp D     &kp F     &kp G                              &kp H   &kp J     &kp K              &kp L    &kp SEMI  &kp SQT
+&kp LCTRL   &kp Z               &kp X   &kp C     &kp V     &kp B   &kp K_COPY    &kp K_PASTE  &kp N   &kp M     &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
+                                        &kp LALT  &kp LGUI  &mo 1   &kp SPACE     &kp RET      &mo 2   &kp BSPC  &kt LC(LA(SPACE))
             >;
         };
 
@@ -51,13 +51,13 @@
             // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "Lower";
+            display-name = "L1";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0       &bt BT_SEL 1       &bt BT_SEL 2           &bt BT_SEL 3       &bt BT_SEL 4                              &kp C_RW           &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp K_MUTE     &kp C_VOL_DN    &kp C_VOLUME_UP
-&kp F1      &kp LG(LS(SPACE))  &kt LA(LC(LG(E)))  &kt LA(LC(LG(R)))      &kt LA(LG(LC(T)))  &kp F6                                    &kt LA(BACKSPACE)  &kp LA(LEFT)      &kp UP_ARROW        &kp LA(RIGHT)  &kp LA(DELETE)  &kp F12
-&kp GRAVE   &kt LA(LC(SPACE))  &kt LC(LG(LA(S)))  &kt LA(LC(LG(SPACE)))  &kt LA(LC(LG(F)))  &kp PRCNT                                 &kp HOME           &kp LEFT          &kp DOWN            &kp UP         &kp END         &kp TILDE
-&trans      &kt LA(LG(LC(Z)))  &kt LA(LC(LG(X)))  &kt LA(LC(LG(EQUAL)))  &kt LA(LC(LG(V)))  &trans        &trans       &trans         &kp HOME           &kp END           &kp KP_PLUS         &kp LBRC       &msc SCRL_UP    &kp PIPE
-                                                  &trans                 &mkp MB4           &mo 3         &kt ENTER    &kp BACKSPACE  &kp PG_UP          &kp PAGE_DOWN     &remove_line
+&bt BT_CLR  &bt BT_SEL 0       &bt BT_SEL 1       &bt BT_SEL 2           &bt BT_SEL 3       &bt BT_SEL 4                              &kp C_RW           &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp K_MUTE       &kp C_VOL_DN    &kp C_VOLUME_UP
+&kp F1      &kp LG(LS(SPACE))  &kt LA(LC(LG(E)))  &kt LA(LC(LG(R)))      &kt LA(LG(LC(T)))  &kp F6                                    &kt LA(BACKSPACE)  &kp LA(LEFT)      &kp UP_ARROW        &kp LA(RIGHT)    &kp LA(DELETE)  &kp F12
+&kp GRAVE   &kt LA(LC(SPACE))  &kt LC(LG(LA(S)))  &kt LA(LC(LG(SPACE)))  &kt LA(LC(LG(F)))  &kp PRCNT                                 &kp HOME           &kp LEFT          &kp DOWN            &kp RIGHT_ARROW  &kp END         &kp TILDE
+&trans      &kt LA(LG(LC(Z)))  &kt LA(LC(LG(X)))  &kt LA(LC(LG(EQUAL)))  &kt LA(LC(LG(V)))  &trans        &tog 0       &trans         &kp PG_UP          &kp PAGE_DOWN     &kp KP_PLUS         &kp LBRC         &msc SCRL_UP    &kp PIPE
+                                                  &kp LEFT_ALT           &kp LCMD           &none         &kt ENTER    &kp BACKSPACE  &mo 4              &kp PAGE_DOWN     &remove_line
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -71,33 +71,33 @@
             // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "Raise";
+            display-name = "L2";
             bindings = <
-&kp C_BRI_DEC  &kp C_BRIGHTNESS_INC  &kp C_AL_SELECT_TASK  &kp C_AC_SEARCH  &kp C_MEDIA_VCR  &trans                        &trans         &kt LG(BACKSPACE)  &trans          &kt LG(DELETE)   &trans          &trans
-&kp GRAVE      &kp N1                &kp N2                &kp N3           &kp N4           &kp N5                        &kp LA(PG_UP)  &msc SCRL_LEFT     &mmv MOVE_UP    &msc SCRL_RIGHT  &kt LA(DELETE)  &trans
-&kp F1         &kp F2                &kp F3                &kp F4           &kp F5           &kp F6                        &kp HOME       &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN  &trans
-&kp F7         &kp F8                &kp F9                &kp F10          &kp F11          &kp F12  &trans    &trans     &kp PAGE_DOWN  &kp END            &kp EQUAL       &kp LBKT         &msc SCRL_UP    &kp BSLH
-                                                           &trans           &trans           &trans   &trans    &mkp LCLK  &mkp RCLK      &mkp MB4           &mkp MB5
+&kp C_BRI_DEC  &kp C_BRIGHTNESS_INC  &kp C_AL_SELECT_TASK  &kp C_AC_SEARCH  &kp C_MEDIA_VCR  &kp C_SLEEP                       &kp C_RW       &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp K_MUTE       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
+&kp GRAVE      &kp N1                &kp N2                &kp N3           &kp N4           &kp N5                            &kp LA(PG_UP)  &msc SCRL_LEFT    &mmv MOVE_UP        &msc SCRL_RIGHT  &kt LA(DELETE)     &trans
+&kp F1         &kp F2                &kp F3                &kp F4           &kp F5           &kp F6                            &kp PAGE_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN      &mmv MOVE_RIGHT  &msc SCRL_DOWN     &trans
+&kp F7         &kp F8                &kp F9                &kp F10          &kp F11          &kp F12      &trans    &trans     &kp HOME       &kp END           &kp EQUAL           &kp LBKT         &msc SCRL_UP       &kp BSLH
+                                                           &trans           &trans           &mo 3        &trans    &mkp LCLK  &mkp RCLK      &mkp MB4          &mkp MB5
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         L3 {
-            display-name = "Raise";
+            display-name = "L3";
             bindings = <
-&trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans    &trans     &trans
-&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6       &kp N7     &kp N8     &kp N9    &kp N0     &trans
-&kp F1     &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans       &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
-&kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                           &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
+&trans     &trans  &trans           &trans                         &trans                 &trans                     &trans            &trans        &trans        &trans        &trans             &trans
+&kp GRAVE  &kp N1  &kp AMPERSAND    &mt LEFT_PARENTHESIS ASTERISK  &kp RIGHT_PARENTHESIS  &kp N5                     &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp RIGHT_BRACKET  &kp BACKSLASH
+&kp F1     &kp F2  &kp DOLLAR       &kp PERCENT                    &kp CARET              &kp F6                     &trans            &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp RIGHT          &trans
+&kp F7     &kp F8  &kp EXCLAMATION  &kp AT_SIGN                    &kp HASH               &kp F12  &trans    &trans  &kp KP_PLUS       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RBKT           &kp BSLH
+                                    &trans                         &trans                 &trans   &trans    &trans  &trans            &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         L4 {
-            display-name = "Raise";
+            display-name = "L4";
             bindings = <
 &trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans    &trans     &trans
 &kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6       &kp N7     &kp N8     &kp N9    &kp N0     &trans
