@@ -21,18 +21,17 @@
             label = "REMOVE_LINE";
         };
 
-        WIN: WIN {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0 &tog 5>;
-            label = "WIN";
-        };
+        OS: OS {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&macro_param_2to1 &tog MACRO_PLACEHOLDER>,
+                <&macro_release>;
 
-        MACBOOK: MACBOOK {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &tog 0>;
-            label = "MACBOOK";
+            label = "OS";
         };
     };
 
@@ -67,11 +66,11 @@
 
             display-name = "L1";
             bindings = <
-&bt BT_CLR   &WIN               &MACBOOK           &bt BT_SEL 2           &bt BT_SEL 3       &bt BT_SEL 4                              &kp C_RW           &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp K_MUTE       &kp C_VOL_DN    &kp C_VOLUME_UP
-&kp F1       &kp LG(LS(SPACE))  &kp LA(LC(LG(E)))  &kp LA(LC(LG(R)))      &kp LA(LG(LC(T)))  &kp F6                                    &kt LA(BACKSPACE)  &kp LA(LEFT)      &kp UP_ARROW        &kp LA(RIGHT)    &kp LA(DELETE)  &kp F12
-&kp GRAVE    &kp LA(LC(SPACE))  &kp LC(LG(LA(S)))  &kp LA(LC(LG(SPACE)))  &kp LA(LC(LG(F)))  &kp PRCNT                                 &kp HOME           &kp LEFT          &kp DOWN            &kp RIGHT_ARROW  &kp END         &kp TILDE
-&kp LG(TAB)  &kp LA(LG(LC(Z)))  &kp LA(LC(LG(X)))  &kp LA(LC(LG(EQUAL)))  &kp LA(LC(LG(V)))  &trans        &tog 0       &trans         &kp PG_UP          &kp PAGE_DOWN     &kp KP_PLUS         &kp LBRC         &msc SCRL_UP    &kp PIPE
-                                                   &kp LEFT_ALT           &kp LCMD           &none         &kt ENTER    &kp BACKSPACE  &mo 4              &kp RIGHT_GUI     &remove_line
+&bt BT_CLR      &OS 1 5            &OS 2 0            &bt BT_SEL 2           &bt BT_SEL 3       &bt BT_SEL 4                              &kp C_RW           &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp K_MUTE       &kp C_VOL_DN    &kp C_VOLUME_UP
+&kp TAB         &kp LG(LS(SPACE))  &kp LA(LC(LG(E)))  &kp LA(LC(LG(R)))      &kp LA(LG(LC(T)))  &kp F6                                    &kt LA(BACKSPACE)  &kp LA(LEFT)      &kp UP_ARROW        &kp LA(RIGHT)    &kp LA(DELETE)  &kp F12
+&kp LEFT_SHIFT  &kp LA(LC(SPACE))  &kp LC(LG(LA(S)))  &kp LA(LC(LG(SPACE)))  &kp LA(LC(LG(F)))  &kp PRCNT                                 &kp HOME           &kp LEFT          &kp DOWN            &kp RIGHT_ARROW  &kp END         &kp TILDE
+&kp LCTRL       &kp LA(LG(LC(Z)))  &kp LA(LC(LG(X)))  &kp LA(LC(LG(EQUAL)))  &kp LA(LC(LG(V)))  &trans        &tog 0       &trans         &kp PG_UP          &kp PAGE_DOWN     &kp KP_PLUS         &kp LBRC         &msc SCRL_UP    &kp PIPE
+                                                      &kp LEFT_ALT           &kp LCMD           &none         &kt ENTER    &kp BACKSPACE  &mo 4              &kp RIGHT_GUI     &remove_line
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -100,11 +99,11 @@
         L3 {
             display-name = "L3";
             bindings = <
-&trans     &trans  &trans           &trans                         &trans                 &trans                        &trans            &kp CARET     &kp SLASH     &kp ASTERISK  &kp MINUS  &trans
-&kp GRAVE  &kp N1  &kp AMPERSAND    &mt LEFT_PARENTHESIS ASTERISK  &kp RIGHT_PARENTHESIS  &kp N5                        &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp PLUS   &kp BACKSLASH
-&kp F1     &kp F2  &kp DOLLAR       &kp PERCENT                    &kp CARET              &kp F6                        &trans            &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL  &trans
-&kp F7     &kp F8  &kp EXCLAMATION  &kp AT_SIGN                    &kp HASH               &kp F12  &trans    &trans     &kp LEFT_BRACKET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RBKT   &kp BSLH
-                                    &trans                         &trans                 &mo 2    &trans    &kp ENTER  &trans            &trans        &trans
+&trans          &trans  &trans           &trans                         &trans                 &trans                        &trans            &kp CARET     &kp SLASH     &kp ASTERISK  &kp MINUS  &trans
+&kp GRAVE       &kp N1  &kp AMPERSAND    &mt LEFT_PARENTHESIS ASTERISK  &kp RIGHT_PARENTHESIS  &kp N5                        &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp PLUS   &kp BACKSLASH
+&kp LEFT_SHIFT  &kp F2  &kp DOLLAR       &kp PERCENT                    &kp CARET              &kp F6                        &trans            &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL  &trans
+&kp F7          &kp F8  &kp EXCLAMATION  &kp AT_SIGN                    &kp HASH               &kp F12  &trans    &trans     &kp LEFT_BRACKET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RBKT   &kp BSLH
+                                         &kp LALT                       &kp LEFT_GUI           &mo 2    &trans    &kp ENTER  &trans            &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -131,16 +130,6 @@
 &kp LSHIFT    &kp A               &kp S   &kp D     &kp F      &kp G                              &kp H   &kp J     &kp K               &kp L    &kp SEMI  &kp SQT
 &kp LEFT_ALT  &kp Z               &kp X   &kp C     &kp V      &kp B   &kp K_COPY    &kp K_PASTE  &kp N   &kp M     &kp COMMA           &kp DOT  &kp FSLH  &kp RSHFT
                                           &kp RGUI  &kp LCTRL  &mo 1   &kp SPACE     &kp RET      &mo 3   &kp BSPC  &kt LC(LEFT_SHIFT)
-            >;
-        };
-
-        layer_6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
     };
