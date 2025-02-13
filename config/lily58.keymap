@@ -27,9 +27,9 @@
             bindings =
                 <&macro_press>,
                 <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&macro_param_2to1 &tog MACRO_PLACEHOLDER>,
-                <&macro_release>;
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_2to1 &tog MACRO_PLACEHOLDER>;
 
             label = "OS";
         };
@@ -66,7 +66,7 @@
 
             display-name = "L1";
             bindings = <
-&bt BT_CLR      &OS 1 5            &OS 2 0                &bt BT_SEL 2           &bt BT_SEL 3       &bt BT_SEL 4                                   &kp C_RW           &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp K_MUTE       &kp C_VOL_DN    &kp C_VOLUME_UP
+&bt BT_CLR      &OS 0 5            &OS 1 0                &bt BT_SEL 2           &bt BT_SEL 3       &bt BT_SEL 4                                   &kp C_RW           &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp K_MUTE       &kp C_VOL_DN    &kp C_VOLUME_UP
 &kp TAB         &kp LG(LS(SPACE))  &kp LA(LC(LG(W)))      &kp LA(LC(LG(LS(E))))  &kp LA(LG(LC(R)))  &kp LA(LG(LC(T)))                              &kt LA(BACKSPACE)  &kp LA(LEFT)      &kp UP_ARROW        &kp LA(RIGHT)    &kp LA(DELETE)  &kp F12
 &kp LEFT_SHIFT  &kp LA(LC(SPACE))  &kp LC(LG(LA(S)))      &kp LA(LC(LG(SPACE)))  &kp LA(LC(LG(F)))  &kp LA(LC(LG(G)))                              &kp HOME           &kp LEFT          &kp DOWN            &kp RIGHT_ARROW  &kp END         &kp TILDE
 &kp LCTRL       &kp LA(LG(LC(Z)))  &kp LA(LC(LG(EQUAL)))  &kp LA(LC(LG(C)))      &kp LA(LC(LG(V)))  &kp LA(LC(LG(B)))  &tog 2       &tog 3         &kp PG_UP          &kp PAGE_DOWN     &kp KP_PLUS         &kp LBRC         &msc SCRL_UP    &kp PIPE
@@ -90,7 +90,7 @@
 &kp GRAVE      &kp N1                &kp N2                &kp N3           &kp N4           &kp N5                            &kp LA(PG_UP)  &msc SCRL_LEFT    &mmv MOVE_UP        &msc SCRL_RIGHT  &kt LA(DELETE)     &trans
 &kp F1         &kp F2                &kp F3                &kp F4           &kp F5           &kp F6                            &kp PAGE_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN      &mmv MOVE_RIGHT  &msc SCRL_DOWN     &trans
 &kp F7         &kp F8                &kp F9                &kp F10          &kp F11          &kp F12      &trans    &trans     &kp HOME       &kp END           &kp EQUAL           &kp LBKT         &msc SCRL_UP       &kp BSLH
-                                                           &trans           &trans           &mo 4        &trans    &mkp LCLK  &mkp RCLK      &mkp MB4          &mkp MB5
+                                                           &kp LEFT_ALT     &kp LEFT_WIN     &mo 4        &trans    &mkp LCLK  &mkp RCLK      &mkp MB4          &mkp MB5
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
