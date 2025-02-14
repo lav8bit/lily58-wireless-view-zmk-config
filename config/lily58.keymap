@@ -18,6 +18,11 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&mt {
+    tapping-term-ms = <400>;
+    quick-tap-ms = <100>;
+};
+
 / {
     macros {
         remove_line: remove_line {
