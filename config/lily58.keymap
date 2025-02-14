@@ -36,8 +36,7 @@
                 <&macro_pause_for_release>,
                 <&macro_param_2to2 &bt BT_SEL MACRO_PLACEHOLDER>,
                 <&macro_wait_time 900>,
-                <&macro_release>,
-                <&macro_press>;
+                <&macro_release>;
 
             label = "OS";
         };
