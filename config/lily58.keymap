@@ -19,9 +19,9 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &mt {
-    tapping-term-ms = <200>;
-    quick-tap-ms = <5>;
+    tapping-term-ms = <400>;
     hold-trigger-key-positions = <>;
+    flavor = "tap-preferred";
 };
 
 / {
@@ -33,7 +33,7 @@
             label = "REMOVE_LINE";
         };
 
-        WIN: OS {
+        WIN: WIN {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -44,7 +44,7 @@
                 <&macro_wait_time 1500>,
                 <&macro_release>;
 
-            label = "OS";
+            label = "WIN";
         };
 
         MAC: MAC {
