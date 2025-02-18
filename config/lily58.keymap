@@ -104,11 +104,11 @@
         L3 {
             display-name = "L3";
             bindings = <
-&kp ESCAPE      &kp SQT              &mt LA(NUMBER_9) LA(NUMBER_7)  &mt LA(SQT) LA(NUMBER_8)       &mt LA(NUMBER_4) LA(M)  &mt LA(DOT) LC(LG(SPACE))                                                                            &kp LEFT_PARENTHESIS  &kp CARET          &kp SLASH          &kp ASTERISK            &kp MINUS  &kp RIGHT_PARENTHESIS
-&trans          &kp DOUBLE_QUOTES    &mt AMPERSAND QUESTION         &mt LEFT_PARENTHESIS ASTERISK  &kp RIGHT_PARENTHESIS   &kp N5                                                                                               &kp LEFT_BRACE        &mt HOME NUMBER_7  &mt UP NUMBER_8    &mt PAGE_UP NUMBER_9    &kp PLUS   &kp RIGHT_BRACE
-&kp LEFT_SHIFT  &kp QUESTION         &mt DOLLAR LA(LS(NUMBER_2))    &kp PERCENT                    &kp CARET               &kp F6                                                                                               &kp LEFT_BRACKET      &mt LEFT NUMBER_4  &kp N5             &mt RIGHT NUMBER_6      &kp EQUAL  &kp RIGHT_BRACKET
-&kp LCTRL       &mt COLON SEMICOLON  &kp EXCLAMATION                &kp AT_SIGN                    &kp HASH                &kp F12                    &mt C_AL_FILE_BROWSER C_MEDIA_COMPUTER    &mt C_AL_CALENDAR K_CALCULATOR  &kp LESS_THAN         &mt END NUMBER_1   &mt DOWN NUMBER_2  &mt PAGE_DOWN NUMBER_3  &kp RBKT   &kp GREATER_THAN
-                                                                    &kp LALT                       &kp LEFT_GUI            &none                      &kp SPACE                                 &kp ENTER                       &kp NUMBER_0          &kp BACKSPACE      &mt DEL DOT
+&kp ESCAPE      &kp SQT              &mt LA(NUMBER_9) LA(NUMBER_7)  &mt LA(SQT) LA(NUMBER_8)       &mt LA(C) LA(M)        &mt LA(DOT) LC(LG(SPACE))                                                                            &kp LEFT_PARENTHESIS  &kp CARET          &kp SLASH          &kp ASTERISK            &kp MINUS  &kp RIGHT_PARENTHESIS
+&trans          &kp DOUBLE_QUOTES    &mt AMPERSAND QUESTION         &mt LEFT_PARENTHESIS ASTERISK  &kp RIGHT_PARENTHESIS  &kp N5                                                                                               &kp LEFT_BRACE        &mt HOME NUMBER_7  &mt UP NUMBER_8    &mt PAGE_UP NUMBER_9    &kp PLUS   &kp RIGHT_BRACE
+&kp LEFT_SHIFT  &kp QUESTION         &mt DOLLAR LA(LS(NUMBER_2))    &kp PERCENT                    &kp CARET              &kp F6                                                                                               &kp LEFT_BRACKET      &mt LEFT NUMBER_4  &kp N5             &mt RIGHT NUMBER_6      &kp EQUAL  &kp RIGHT_BRACKET
+&kp LCTRL       &mt COLON SEMICOLON  &kp EXCLAMATION                &kp AT_SIGN                    &kp HASH               &kp F12                    &mt C_AL_FILE_BROWSER C_MEDIA_COMPUTER    &mt C_AL_CALENDAR K_CALCULATOR  &kp LESS_THAN         &mt END NUMBER_1   &mt DOWN NUMBER_2  &mt PAGE_DOWN NUMBER_3  &kp RBKT   &kp GREATER_THAN
+                                                                    &kp LALT                       &kp LEFT_GUI           &none                      &kp SPACE                                 &kp ENTER                       &kp NUMBER_0          &kp BACKSPACE      &mt DEL DOT
             >;
         };
     };
