@@ -51,6 +51,8 @@
             label = "TAP_DANCE_COPY_CUT_MAC";
             #binding-cells = <0>;
             bindings = <&kp LG(C)>, <&kp LG(X)>;
+
+            tapping-term-ms = <100>;
         };
 
         tap_dance_copy_cut_win: tap_dance_copy_cut_win {
@@ -58,6 +60,8 @@
             label = "TAP_DANCE_COPY_CUT_WIN";
             #binding-cells = <0>;
             bindings = <&kp LC(C)>, <&kp LC(X)>;
+
+            tapping-term-ms = <100>;
         };
     };
 
